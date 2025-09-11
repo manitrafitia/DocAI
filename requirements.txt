@@ -5,3 +5,7 @@ langchain-community
 langchain-ollama
 pydantic
 python-multipart
+faiss-cpu
+langchain-text-splitters
+pypdf
+python-docx
