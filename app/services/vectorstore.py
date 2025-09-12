@@ -5,6 +5,13 @@ class VectorStoreService:
     def __init__(self, model_name: str = "mistral"):
         self.embeddings = OllamaEmbeddings(model=model_name)
         self.vectorstore = None
+        try:
+            # Try to load existing vectorstore
+            self.load()
+        except Exception as e:
+            # If loading fails, vectorstore will remain None
+            print(f"Could not load existing vectorstore: {e}")
+            print("Please build the vectorstore first using the /ingest endpoint")
 
     def build_store(self, texts: list[str]):
         """
