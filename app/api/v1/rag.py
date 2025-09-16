@@ -1,7 +1,6 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, UploadFile, File
 from app.services.llm import llm_service
 from app.models.rag import PromptRequest, PromptResponse
-from fastapi import UploadFile, File
 import tempfile
 from app.utils.file_parser import parse_file
 from app.utils.text_chunker import chunk_text
